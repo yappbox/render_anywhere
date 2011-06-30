@@ -10,6 +10,6 @@ module RenderAnywhere
   end
   
   def rendering_controller
-    @rendering_controller ||= RenderingController.new
+    @rendering_controller ||= RenderAnywhere::RenderingController.new
   end
 end
