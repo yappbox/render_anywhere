@@ -20,7 +20,7 @@ In your Rails app, in a rake task, model, background job, or where ever you like
     require 'render_anywhere'
 
     class AnyClass
-      include RenderAnwhere
+      include RenderAnywhere
 
       def build_html
         html = render :template => 'normal/template/reference',
