@@ -7,10 +7,6 @@ module RenderAnywhere
     include AbstractController::Helpers
     include AbstractController::Translation
     include AbstractController::AssetPaths
-    include Rails.application.routes.url_helpers
-
-    # this is you normal rails application helper
-    helper ApplicationHelper
 
     # Define additional helpers, this one is for csrf_meta_tag
     helper_method :protect_against_forgery?
@@ -21,6 +17,12 @@ module RenderAnywhere
     # configure the different paths correctly
     def initialize(*args)
       super()
+
+      self.class.send :include, Rails.application.routes.url_helpers
+
+      # this is you normal rails application helper
+      self.class.send :helper, ApplicationHelper
+
       lookup_context.view_paths = Rails.root.join('app', 'views')
       config.javascripts_dir = Rails.root.join('public', 'javascripts')
       config.stylesheets_dir = Rails.root.join('public', 'stylesheets')
