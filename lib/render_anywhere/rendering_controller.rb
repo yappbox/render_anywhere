@@ -27,6 +27,9 @@ module RenderAnywhere
       config.javascripts_dir = Rails.root.join('public', 'javascripts')
       config.stylesheets_dir = Rails.root.join('public', 'stylesheets')
       config.assets_dir = Rails.root.join('public')
+      
+      # same asset host as the controllers
+      self.asset_host = ActionController::Base.asset_host
     end
 
     # we are not in a browser, no need for this
@@ -38,9 +41,6 @@ module RenderAnywhere
     def flash
       {}
     end
-
-    # same asset host as the controllers
-    self.asset_host = ActionController::Base.asset_host
 
     # and nil request to differentiate between live and offline
     def request
