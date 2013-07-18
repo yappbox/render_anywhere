@@ -40,6 +40,11 @@ module RenderAnywhere
     # same asset host as the controllers
     self.asset_host = ActionController::Base.asset_host
 
+    # so that your cookies calls still work
+    def cookies
+      {}
+    end
+
     # and nil request to differentiate between live and offline
     def request
       nil
