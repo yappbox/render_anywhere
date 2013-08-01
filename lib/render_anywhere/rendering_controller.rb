@@ -46,5 +46,10 @@ module RenderAnywhere
     def request
       nil
     end
+
+    # and params will be accessible
+    def params
+      {}
+    end
   end
 end
