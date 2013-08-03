@@ -51,5 +51,11 @@ module RenderAnywhere
     def params
       {}
     end
+
+    # so that your cookies calls still work
+    def cookies
+      {}
+    end
+
   end
 end
