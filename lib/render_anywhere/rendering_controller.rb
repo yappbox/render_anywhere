@@ -5,7 +5,8 @@ module RenderAnywhere
     # Include all the concerns we need to make this work
     include AbstractController::Logger
     include AbstractController::Rendering
-    include AbstractController::Layouts
+    include ActionView::Layouts if defined?(ActionView::Layouts) # Rails 4.1.x
+    include AbstractController::Layouts if defined?(AbstractController::Layouts) # Rails 3.2.x, 4.0.x
     include AbstractController::Helpers
     include AbstractController::Translation
     include AbstractController::AssetPaths
