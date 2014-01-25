@@ -7,6 +7,7 @@ module RenderAnywhere
     include AbstractController::Helpers
     include AbstractController::Translation
     include AbstractController::AssetPaths
+    include ActionController::Caching
 
     # Define additional helpers, this one is for csrf_meta_tag
     helper_method :protect_against_forgery?
