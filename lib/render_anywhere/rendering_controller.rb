@@ -1,3 +1,5 @@
+require 'ostruct'
+
 module RenderAnywhere
   class RenderingController < AbstractController::Base
     # Include all the concerns we need to make this work
@@ -45,7 +47,7 @@ module RenderAnywhere
 
     # and nil request to differentiate between live and offline
     def request
-      nil
+      OpenStruct.new
     end
 
     # and params will be accessible
