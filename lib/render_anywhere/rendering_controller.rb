@@ -7,6 +7,7 @@ module RenderAnywhere
     include AbstractController::Rendering
     include ActionView::Layouts if defined?(ActionView::Layouts) # Rails 4.1.x
     include AbstractController::Layouts if defined?(AbstractController::Layouts) # Rails 3.2.x, 4.0.x
+    include CacheDigests::ViewCacheDependency if defined?(CacheDigests) # Rails 3.2.x with cache_digests
     include AbstractController::Helpers
     include AbstractController::Translation
     include AbstractController::AssetPaths
