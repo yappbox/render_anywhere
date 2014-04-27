@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.homepage    = ""
   s.summary     = %q{Render Rails templates to a string from anywhere.}
   s.description = %q{Out of the box, Rails will render templates in a controller context only. This gem allows for calling "render" from anywhere: models, background jobs, rake tasks, you name it.}
+  s.licenses    = ['MIT']
 
   s.rubyforge_project = "render_anywhere"
 
