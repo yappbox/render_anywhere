@@ -39,6 +39,12 @@ In your Rails app, in a rake task, model, background job, or where ever you like
       def set_instance_variable(var, value)
         set_instance_variable(var, value)
       end
+
+      class RenderingController < RenderAnywhere::RenderingController
+        # include custom modules here, define accessors, etc. For example:
+        attr_accessor :current_user
+        helper_method :current_user
+      end
     end
 
 Thanks
