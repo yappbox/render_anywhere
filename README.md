@@ -6,17 +6,22 @@ Out of the box, Rails can render templates in a controller context only. This li
 Installation
 ------------------
 
+```bash
     gem install render_anywhere
+```
 
 Usage
 --------------------
 
 Put render_anywhere in your Gemfile: 
 
+```ruby
     gem 'render_anywhere', :require => false
+```
 
 In your Rails app, in a rake task, model, background job, or where ever you like, require render_anywhere, include the module and call render with the same arguments as ActionController::Base#render takes. It will return a string.
 
+```ruby
     require 'render_anywhere'
 
     class AnyClass
@@ -46,6 +51,7 @@ In your Rails app, in a rake task, model, background job, or where ever you like
         helper_method :current_user
       end
     end
+```
 
 Thanks
 --------------------
