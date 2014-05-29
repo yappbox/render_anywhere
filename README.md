@@ -48,6 +48,11 @@ Thanks
 
 The basic approach used here came from [this gist](https://gist.github.com/977181) by [Julien Guimont aka juggy](https://github.com/juggy). Thanks!
 
+Contributing
+--------------------
+
+Run tests with `rake` or `rake spec`.
+
 Author
 --------------------
 
