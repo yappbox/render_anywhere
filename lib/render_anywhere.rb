@@ -8,6 +8,7 @@ module RenderAnywhere
   def render(*args)
     rendering_controller.render_to_string(*args)
   end
+
   def set_render_anywhere_helpers(*args)
     args.each do |helper_name|
       rendering_controller.class_eval do
@@ -15,13 +16,15 @@ module RenderAnywhere
       end
     end
   end
+
   def set_instance_variable(var, value)
     rendering_controller.class_eval do
       attr_accessor :"#{var}"
     end
     rendering_controller.public_send("#{var}=", value)
   end
+
   def rendering_controller
-    @rendering_controller ||= RenderAnywhere::RenderingController.new
+    @rendering_controller ||= self.class.const_get("RenderingController").new
   end
 end

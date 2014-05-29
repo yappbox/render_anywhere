@@ -6,17 +6,22 @@ Out of the box, Rails can render templates in a controller context only. This li
 Installation
 ------------------
 
+```bash
     gem install render_anywhere
+```
 
 Usage
 --------------------
 
 Put render_anywhere in your Gemfile: 
 
+```ruby
     gem 'render_anywhere', :require => false
+```
 
 In your Rails app, in a rake task, model, background job, or where ever you like, require render_anywhere, include the module and call render with the same arguments as ActionController::Base#render takes. It will return a string.
 
+```ruby
     require 'render_anywhere'
 
     class AnyClass
@@ -39,7 +44,14 @@ In your Rails app, in a rake task, model, background job, or where ever you like
       def set_instance_variable(var, value)
         set_instance_variable(var, value)
       end
+
+      class RenderingController < RenderAnywhere::RenderingController
+        # include custom modules here, define accessors, etc. For example:
+        attr_accessor :current_user
+        helper_method :current_user
+      end
     end
+```
 
 Thanks
 --------------------
@@ -47,6 +59,13 @@ Thanks
 [Yapp](http://yapp.us), whose CTO (me) kindly agreed to open source this library. App yourself!
 
 The basic approach used here came from [this gist](https://gist.github.com/977181) by [Julien Guimont aka juggy](https://github.com/juggy). Thanks!
+
+Contributing
+--------------------
+
+Run tests with `rake` or `rspec`.
+
+Run tests against different versions of rails with `appraisal rake` or `appraisal rspec`.
 
 Author
 --------------------
