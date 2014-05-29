@@ -51,7 +51,9 @@ The basic approach used here came from [this gist](https://gist.github.com/97718
 Contributing
 --------------------
 
-Run tests with `rake` or `rake spec`.
+Run tests with `rake` or `rspec`.
+
+Run tests against different versions of rails with `appraisal rake` or `appraisal rspec`.
 
 Author
 --------------------
