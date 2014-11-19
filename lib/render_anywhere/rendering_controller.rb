@@ -1,7 +1,7 @@
 require 'ostruct'
 
 module RenderAnywhere
-  class RenderingController < AbstractController::Base
+  class RenderingController < ActionController::Metal
     # Include all the concerns we need to make this work
     include AbstractController::Logger
     include AbstractController::Rendering
