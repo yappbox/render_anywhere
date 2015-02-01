@@ -50,6 +50,11 @@ In your Rails app, in a rake task, model, background job, or where ever you like
         attr_accessor :current_user
         helper_method :current_user
       end
+
+      # If you define custom RenderingController, don't forget to override this method
+      def rendering_controller
+        @rendering_controller ||= self.class.const_get("RenderingController").new
+      end
     end
 ```
 
