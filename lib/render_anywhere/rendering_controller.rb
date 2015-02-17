@@ -25,7 +25,9 @@ module RenderAnywhere
       self.class.send :include, Rails.application.routes.url_helpers
 
       # this is you normal rails application helper
-      self.class.send :helper, ApplicationHelper
+      if defined?(ApplicationHelper)
+        self.class.send :helper, ApplicationHelper
+      end
 
       lookup_context.view_paths = ApplicationController.view_paths
       config.javascripts_dir = Rails.root.join('public', 'javascripts')
