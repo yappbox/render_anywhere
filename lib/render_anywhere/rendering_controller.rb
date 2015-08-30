@@ -34,6 +34,7 @@ module RenderAnywhere
       config.stylesheets_dir = Rails.root.join('public', 'stylesheets')
       config.assets_dir = Rails.root.join('public')
       config.cache_store = ActionController::Base.cache_store
+      config.relative_url_root = ActionController::Base.relative_url_root
 
       # same asset host as the controllers
       self.asset_host = ActionController::Base.asset_host
