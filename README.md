@@ -1,6 +1,8 @@
 render_anywhere
 ====================
 
+DEPRECATED: This gem is no longer needed as of Rails 5. Use `ActionController::Renderer` instead.
+
 Out of the box, Rails can render templates in a controller context only. This little gem allows for calling "render" from anywhere: models, background jobs, rake tasks, you name it.
 
 Installation
